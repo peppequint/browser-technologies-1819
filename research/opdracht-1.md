@@ -69,7 +69,16 @@ Concluding, the goal of the website is really important. If the website needs di
 
 ## Local storage
 
-### Problems
+In the backend of a website happens a lot. So many
+
+<details><summary><a>Hockey.nl</a>
+</summary>
+<br>
+<img src="./../public/src/img/screenshot-localstorage-hockey1.png" width="320" /><img src="./../public/src/img/screenshot-localstorage-hockey2.png" width="320" />
+
+<br>
+<blockquote>https://nos.nl/</blockquote>
+</details>
 
 ### Examples
 
