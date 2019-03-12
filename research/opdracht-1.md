@@ -14,7 +14,19 @@
 - [Local storage](#local-storage)
 - [Sources](#sources)
 
+## Intro
+
 ## Color
+
+Color is one of the most important features on the web. It can make or break a website, doesn't matter what kind of user you are trying to reach.
+However, color is also one of the most difficult features of the web; look at the example below.
+
+<details><summary><a href="#">Contrast</p>
+</summary>
+<br>
+<img src="./../public/src/img/example-image-1.jpg" />
+<blockquote>https://medium.com/@phabbs/dont-suck-at-design-b506abd99f2</blockquote>
+</details>
 
 ### Problems
 
@@ -27,3 +39,5 @@
 ### Examples
 
 ## Sources
+
+- [FlatIcon](https://www.flaticon.com)
