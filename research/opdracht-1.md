@@ -31,7 +31,7 @@ But what happens if you only have a greyscale on a website? If the colours are t
 
 What I did to test this, I added a few lines of CSS to the universal selector of the stylesheet.
 
-```css
+```CSS
 * {
   -moz-filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
@@ -50,6 +50,8 @@ For Google Maps colours are very important. The whole map is based on standard c
 <br>
 <blockquote>https://www.google.nl/maps</blockquote>
 </details>
+
+---
 
 However, for NOS (dutch news website) is it not a problem at all if they do not have any colours. The main goal for the user is to read news articles and with only black and white there is no problem at all.
 
