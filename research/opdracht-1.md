@@ -1,6 +1,6 @@
 <p align="center">
-	<h1 align='center'>Browser Technologies</h1>
-	<img align='center' src="./../public/src/img/header-image_research.png" width="720" />
+	<h1 align="center">Browser Technologies</h1>
+	<img align="center" src="./../public/src/img/header-image_research.png" width="980" />
 </p>
 <p align="center" width="480">
 	For this assignment I've done some research about two features of the web; colour and local storage. Below you can find the results of this research.
