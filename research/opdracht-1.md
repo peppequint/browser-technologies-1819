@@ -69,21 +69,66 @@ Concluding, the goal of the website is really important. If the website needs di
 
 ## Local storage
 
-In the backend of a website happens a lot. So many
+In the backend of a website happens a lot. For examples, via cookies it is possible to track what a user does on a website. This data can be saved in a storage. If a user comes back on another time at the website, this data can help to speed up the workflow of the user. To test what localStorage does, I turned off this settings in the browser settings. Also, in the developer tool of Google Chrome I checked what kind of data a website stores. Below are the results of this research.
+
+### Examples
+
+Every time I search for a timetable of my train ride, the NS website will store the latest location I searched for. Also it will save the location of departure and arrival.
+It changes the data into JSON objects
+
+```json
+0: {
+	"coordinates": {
+		"latitude": 52.3877792358398,
+		"longitude": 4.63833332061768
+	},
+	"name": "Haarlem",
+	"locationType": "TRAIN_STATION",
+	"transport": "OV",
+	"id": "hlm"
+}
+1: {
+	"transport": "OV",
+	"id": "hvs"
+}
+
+2: {
+	"transport": "OV",
+	"id": "bsmz"
+}
+```
+
+<details><summary><a>NS</a>
+</summary>
+<br>
+<img src="./../public/src/img/screenshot-localstorage-ns1.png" width="420" /><img src="./../public/src/img/screenshot-localstorage-ns2.png" width="420" />
+
+<br>
+<blockquote>https://www.ns.nl/</blockquote>
+</details>
+
+---
+
+But what happens when I turn off localStorage? What changes to my workflow and what do I get irritated about? Every time I come to a website I have to log in again. It has to do with the fact that cookies are not stored and that there is nothing in the localStorage. Also I often go to hockey.nl, a website where I can see the standings and fixtures of my field hockey team. Since I turned off the settings, I constantly need to select my team again, which is a very annoying. Below you can see before and after I turned off the settings.
 
 <details><summary><a>Hockey.nl</a>
 </summary>
 <br>
-<img src="./../public/src/img/screenshot-localstorage-hockey1.png" width="320" /><img src="./../public/src/img/screenshot-localstorage-hockey2.png" width="320" />
+<img src="./../public/src/img/screenshot-localstorage-hockey2.png" width="420" /><img src="./../public/src/img/screenshot-localstorage-hockey1.png" width="420" />
 
 <br>
-<blockquote>https://nos.nl/</blockquote>
+<blockquote>https://hockey.nl/</blockquote>
 </details>
 
-### Examples
+---
+
+Concluding, it is very annoying if you turn off these kind of settings. On the other hand, some websites track so much data that, in my opinion, makes no sense to store (marketing purposes mostly).
 
 ## Sources
 
 - [FlatIcon](https://www.flaticon.com)
 - [Google Maps](https://www.google.nl/maps)
 - [NOS](https://nos.nl/)
+- [NS](https://www.ns.nl/)
+- [Hockey.nl](https://hockey.nl/)
+- [Stackoverflow](https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies)
