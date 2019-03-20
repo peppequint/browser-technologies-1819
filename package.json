@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/peppequint/browser-technologies-1819/issues"
   },
-  "homepage": "https://github.com/peppequint/browser-technologies-1819#readme"
+  "homepage": "https://github.com/peppequint/browser-technologies-1819#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
