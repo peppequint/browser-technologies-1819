@@ -1,0 +1,166 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700");
+
+/* variables */
+
+:root {
+  --color-background: #c9dcfd;
+  --color-background-counter: #3a78ef;
+  --color-heading: #3158c7;
+  --color-button: #7296df;
+  --color-white: #fffdf9;
+  --color-green: #3dc574;
+  --color-yellow: #ffcf5a;
+  --color-blue: #528fd9;
+  --color-red: #ff5c4f;
+}
+
+/* general */
+
+* {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: "Noto Sans", sans-serif;
+  height: 100vh;
+  letter-spacing: 1px;
+  margin: 0;
+  width: 100%;
+}
+
+button {
+  background: none;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* header */
+.header {
+  display: flex;
+  height: 100px;
+  height: 15vh;
+  padding: 2rem;
+  position: absolute;
+  width: 100%;
+}
+
+.header .header-btn {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: 25px;
+  justify-content: space-between;
+  width: 30px;
+}
+
+.header .header-btn .btn-line {
+  background-color: var(--color-white);
+  display: block;
+  height: 3px;
+  width: 30px;
+}
+
+/* main */
+.container {
+  display: grid;
+}
+
+.container .home-team {
+  /* background-color: var(--color-red); */
+}
+
+.container .away-team {
+  /* background-color: var(--color-blue); */
+}
+
+.container .container-item {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  margin: 0 auto;
+  justify-content: center;
+  width: 75%;
+}
+
+.container .container-item .btn {
+  border: 2px solid var(--color-white);
+  border-radius: 5px;
+  height: 50px;
+  min-width: 150px;
+  text-transform: capitalize;
+}
+
+.container .container-item .name {
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.container .container-item .counter {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .container-item .counter .counter-btn {
+  color: var(--color-button);
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 40px;
+  width: 40px;
+}
+
+.container .container-item .counter .score {
+  align-items: center;
+  background-color: var(--color-background-counter);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: flex;
+  font-size: 3rem;
+  height: 80px;
+  justify-content: center;
+  margin: 0 1rem;
+  text-align: center;
+  width: 80px;
+}
+
+/* footer */
+.footer {
+  height: 67px;
+  height: 10vh;
+}
+
+.footer .nav .nav-list {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer .nav .nav-list .nav-item {
+  background-color: var(--color-background-counter);
+  height: 67px;
+  height: 10vh;
+  width: 100%;
+}

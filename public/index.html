@@ -2,12 +2,59 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
     <title>Scoreboard</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script type="text/javascript" src="../app.js"></script>
+    <!--
+      <header class="header">
+        <button class="header-btn">
+          <span class="btn-line"></span> <span class="btn-line"></span>
+          <span class="btn-line"></span>
+        </button>
+      </header>
+    -->
+    <main class="container">
+      <!--
+        <section class="container-item create-game">
+          <button class="btn create-btn">create game</button>
+        </section>
+        <section class="container-item join-game">
+          <button class="btn join-btn">join game</button>
+        </section>
+      -->
+      <section class="container-item home-team">
+        <h1 class="name name-home">Team one</h1>
+        <form class="counter" action="#" method="POST">
+          <input class="counter-btn counter-minus" type="button" value="-" />
+          <span class="score score-home">0</span>
+          <input class="counter-btn counter-plus" type="button" value="+" />
+        </form>
+      </section>
+      <section class="container-item away-team">
+        <h1 class="name name-away">Team two</h1>
+        <form class="counter" action="#" method="POST">
+          <input class="counter-btn counter-minus" type="button" value="-" />
+          <span class="score score-away">0</span>
+          <input class="counter-btn counter-plus" type="button" value="+" />
+        </form>
+      </section>
+    </main>
+    <!--
+      TODO: functionality footer nav bar: create game, reset game, join game
+    -->
+    <!--
+      <footer class="footer">
+        <nav class="nav nav-bottom">
+          <ul class="nav-list">
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+            <li class="nav-item"></li>
+          </ul>
+        </nav>
+      </footer>
+    -->
+    <script type="text/javascript" src="../index.js"></script>
   </body>
 </html>
