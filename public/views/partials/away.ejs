@@ -1,8 +1,10 @@
 <article class="container-item away-team">
-	<h1 class="name name-away">Team two</h1>
-	<form class="counter counter-away" action="/score" method="POST">
-		<input class="counter-btn counter-minus" type="button" value="-" />
-		<span class="score score-away">0</span>
-		<input class="counter-btn counter-plus" type="button" value="+" />
+	<h1 class="name name-home">Team two</h1>
+	<form class="counter counter-away" action="/awayscoreminus" method="POST">
+		<button class="counter-btn counter-minus" type="submit">-</button>
+	</form>
+	<span class="score score-away"><%= scoreboard.away %></span>
+	<form class="counter counter-away" action="/awayscoreplus" method="POST">
+		<button class="counter-btn counter-plus" type="submit">+</button>
 	</form>
 </article>

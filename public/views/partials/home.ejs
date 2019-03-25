@@ -1,8 +1,10 @@
 <article class="container-item home-team">
 	<h1 class="name name-home">Team one</h1>
-	<form class="counter counter-home" action="/score" method="POST">
-		<input class="counter-btn counter-minus" type="submit" value="-" />
-		<span class="score score-home">0</span>
-		<input class="counter-btn counter-plus" type="submit" value="+" />
+	<form class="counter counter-home" action="/homescoreminus" method="POST">
+		<button class="counter-btn counter-minus" type="submit">-</button>
+	</form>
+	<span class="score score-home"><%= scoreboard.home %></span>
+	<form class="counter counter-home" action="/homescoreplus" method="POST">
+		<button class="counter-btn counter-plus" type="submit">+</button>
 	</form>
 </article>
