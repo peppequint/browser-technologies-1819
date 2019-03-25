@@ -19,6 +19,23 @@
 
 ## Install
 
+You have to need [Node.js](https://nodejs.org/en/download/) installed on your computer to run this project. To install this project on your computer, please follow the steps below from your command line:
+
+```shell
+# Clone repository
+git clone https://github.com/peppequint/browser-technologies-1819.git
+
+# Go to the repository
+cd browser-technologies-1819
+
+# Install dependencies
+npm install
+
+# Run & build
+## what to do here?
+
+```
+
 ## Concept
 
 With this app you can keep track of the score during a training match. It is possible to add teams with specific players. This allows the coach to see how well a player performs within the team or to see what the best team is for upcoming fixtures.

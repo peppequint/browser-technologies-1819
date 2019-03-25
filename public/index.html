@@ -7,54 +7,29 @@
     <title>Scoreboard</title>
   </head>
   <body>
-    <!--
-      <header class="header">
-        <button class="header-btn">
-          <span class="btn-line"></span> <span class="btn-line"></span>
-          <span class="btn-line"></span>
-        </button>
-      </header>
-    -->
     <main class="container">
-      <!--
-        <section class="container-item create-game">
-          <button class="btn create-btn">create game</button>
-        </section>
-        <section class="container-item join-game">
-          <button class="btn join-btn">join game</button>
-        </section>
-      -->
-      <section class="container-item home-team">
+      <article class="container-item home-team">
         <h1 class="name name-home">Team one</h1>
-        <form class="counter" action="#" method="POST">
-          <input class="counter-btn counter-minus" type="button" value="-" />
+        <form class="counter counter-home" action="/score" method="POST">
+          <input class="counter-btn counter-minus" type="submit" value="-" />
           <span class="score score-home">0</span>
-          <input class="counter-btn counter-plus" type="button" value="+" />
+          <input class="counter-btn counter-plus" type="submit" value="+" />
         </form>
-      </section>
-      <section class="container-item away-team">
+      </article>
+      <article class="container-divider">
+        <button class="app-btn">Start</button>
+        <button class="app-btn">Finish</button>
+        <button class="app-btn">Reset</button>
+      </article>
+      <article class="container-item away-team">
         <h1 class="name name-away">Team two</h1>
-        <form class="counter" action="#" method="POST">
+        <form class="counter counter-away" action="/score" method="POST">
           <input class="counter-btn counter-minus" type="button" value="-" />
           <span class="score score-away">0</span>
           <input class="counter-btn counter-plus" type="button" value="+" />
         </form>
-      </section>
+      </article>
     </main>
-    <!--
-      TODO: functionality footer nav bar: create game, reset game, join game
-    -->
-    <!--
-      <footer class="footer">
-        <nav class="nav nav-bottom">
-          <ul class="nav-list">
-            <li class="nav-item"></li>
-            <li class="nav-item"></li>
-            <li class="nav-item"></li>
-          </ul>
-        </nav>
-      </footer>
-    -->
-    <script type="text/javascript" src="../index.js"></script>
   </body>
+  <script type="text/javascript" src="./js/index.js"></script>
 </html>
