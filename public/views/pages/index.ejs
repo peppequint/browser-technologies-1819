@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>Scoreboard</title>
-  </head>
-  <body>
-    <main class="container">
+	<% include ../partials/head %>
+	<body>
+		<main class="container">
       <article class="container-item home-team">
         <h1 class="name name-home">Team one</h1>
         <form class="counter counter-home" action="/score" method="POST">
@@ -30,6 +25,5 @@
         </form>
       </article>
     </main>
-  </body>
-  <script type="text/javascript" src="./js/index.js"></script>
+	</body>
 </html>
