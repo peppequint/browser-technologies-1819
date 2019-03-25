@@ -3,27 +3,9 @@
 	<% include ../partials/head %>
 	<body>
 		<main class="container">
-      <article class="container-item home-team">
-        <h1 class="name name-home">Team one</h1>
-        <form class="counter counter-home" action="/score" method="POST">
-          <input class="counter-btn counter-minus" type="submit" value="-" />
-          <span class="score score-home">0</span>
-          <input class="counter-btn counter-plus" type="submit" value="+" />
-        </form>
-      </article>
-      <article class="container-divider">
-        <button class="app-btn">Start</button>
-        <button class="app-btn">Finish</button>
-        <button class="app-btn">Reset</button>
-      </article>
-      <article class="container-item away-team">
-        <h1 class="name name-away">Team two</h1>
-        <form class="counter counter-away" action="/score" method="POST">
-          <input class="counter-btn counter-minus" type="button" value="-" />
-          <span class="score score-away">0</span>
-          <input class="counter-btn counter-plus" type="button" value="+" />
-        </form>
-      </article>
+      <% include ../partials/home %>
+      <% include ../partials/divider %>
+      <% include ../partials/away %>
     </main>
 	</body>
 </html>
