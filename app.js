@@ -14,8 +14,7 @@ app.set("views", path.join(__dirname, "public/views"));
 const scoreboard = {
   home: 0,
   away: 0,
-  game: 1,
-  time: "0:00"
+  game: 1
 };
 
 app.get("/", (req, res) => {
