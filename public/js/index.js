@@ -1,41 +1,33 @@
-const time = document.getElementsByClassName("countdown")[0];
-time.textContent = 3 + ":" + "0" + 0;
+let timeoutHandle;
+const countdown = minutes => {
+  let seconds = 60;
+  const mins = minutes;
+  function tick() {
+    const counter = document.querySelector(".countdown");
+    let currentMinute = mins - 1;
+    seconds--;
+    counter.textContent =
+      currentMinute.toString() +
+      ":" +
+      (seconds < 10 ? "0" : "") +
+      String(seconds);
+    if (seconds > 0) {
+      timeoutHandle = setTimeout(tick, 1000);
+    } else {
+      if (mins > 1) {
+        setTimeout(function() {
+          countdown(mins - 1);
+        }, 1000);
+      }
+    }
+  }
+  tick();
+};
 
-const start = document.querySelector(".start-btn");
-start.addEventListener(
+document.querySelector(".start-btn").addEventListener(
   "click",
   () => {
-    start.textContent = "pause";
-    start.classList.add("pause-btn");
-    startTimer();
+    countdown(3);
   },
   false
 );
-
-const reset = document.querySelector(".reset-btn");
-reset.addEventListener("click", () => {
-  time.textContent = 3 + ":" + "0" + 0;
-});
-
-const startTimer = () => {
-  let time = document.querySelector(".countdown").textContent;
-  let timeSplit = time.split(/[:]+/);
-  let minutes = timeSplit[0];
-  let seconds = changeSecond(timeSplit[1] - 1);
-  if (seconds == 59) {
-    minutes = minutes - 1;
-  }
-
-  document.querySelector(".countdown").textContent = minutes + ":" + seconds;
-  setTimeout(startTimer, 1000);
-};
-
-const changeSecond = second => {
-  if (second < 10 && second >= 0) {
-    second = "0" + second;
-  }
-  if (second < 0) {
-    second = "59";
-  }
-  return second;
-};
