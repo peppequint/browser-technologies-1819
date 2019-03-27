@@ -23,7 +23,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/homescoreminus", (req, res) => {
-  scoreboard.home--;
+  if (scoreboard.home > 0) {
+    scoreboard.home--;
+  }
   console.log(scoreboard.home);
   res.redirect("/");
 });
@@ -35,7 +37,9 @@ app.post("/homescoreplus", (req, res) => {
 });
 
 app.post("/awayscoreminus", (req, res) => {
-  scoreboard.away--;
+  if (scoreboard.away > 0) {
+    scoreboard.away--;
+  }
   console.log(scoreboard.away);
   res.redirect("/");
 });
