@@ -166,12 +166,12 @@ ul {
   justify-content: center;
 }
 
-.container .container-divider .app-value span {
+.container .container-divider .app-value > * {
   text-align: center;
   width: 100px;
 }
 
-.container .container-divider .app-value span:first-child {
+.container .container-divider .app-value time {
   color: var(--color-yellow);
   font-size: 1.5rem;
   font-weight: bold;
