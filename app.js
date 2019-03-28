@@ -26,13 +26,13 @@ app.post("/homescoreminus", (req, res) => {
   if (scoreboard.home > 0) {
     scoreboard.home--;
   }
-  console.log(scoreboard.home);
+  console.log("Score team 1 | " + scoreboard.home + " punten.");
   res.redirect("/");
 });
 
 app.post("/homescoreplus", (req, res) => {
   scoreboard.home++;
-  console.log(scoreboard.home);
+  console.log("Score team 1 | " + scoreboard.home + " punten.");
   res.redirect("/");
 });
 
@@ -40,13 +40,13 @@ app.post("/awayscoreminus", (req, res) => {
   if (scoreboard.away > 0) {
     scoreboard.away--;
   }
-  console.log(scoreboard.away);
+  console.log("Score team 2 | " + scoreboard.away + " punten.");
   res.redirect("/");
 });
 
 app.post("/awayscoreplus", (req, res) => {
   scoreboard.away++;
-  console.log(scoreboard.away);
+  console.log("Score team 2 | " + scoreboard.away + " punten.");
   res.redirect("/");
 });
 

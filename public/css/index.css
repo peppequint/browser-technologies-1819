@@ -11,6 +11,8 @@
   --color-white: #fffdf9;
   --color-yellow: #ffcf5a;
   --color-blue: #528fd9;
+  --color-red: #e43c5d;
+  --color-green: #00e2b8;
 }
 
 /* general */
@@ -99,7 +101,7 @@ ul {
   display: flex;
   flex-flow: row wrap;
   height: 365px;
-  height: 45vh;
+  height: 42.5vh;
   margin: 0 auto;
   justify-content: center;
   width: 75%;
@@ -182,7 +184,38 @@ ul {
   font-weight: bold;
   text-transform: uppercase;
 }
+
 /* footer */
+.status-notification {
+  align-items: center;
+  display: flex;
+  height: 50px;
+  height: 5vh;
+  justify-content: center;
+  left: 0;
+  text-align: center;
+  transform: translateY(5vh);
+  transition: 0.2s ease-in;
+  width: 100%;
+}
+
+.status-notification.offline {
+  background-color: var(--color-red);
+  color: var(--color-yellow);
+  transform: translateY(0);
+}
+
+.status-notification.online {
+  background-color: var(--color-green);
+  color: var(--color-blue);
+  transform: translateY(0);
+}
+
+.status-message {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
 /* supports */
 
