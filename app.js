@@ -11,43 +11,45 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "public/views"));
 
-const scoreboard = {
-  home: 0,
-  away: 0,
-  game: 1,
-  time: "3:00"
-};
+let scoreHome = 0;
+let scoreAway = 0;
 
 app.get("/", (req, res) => {
-  res.render("pages/index", { scoreboard: scoreboard });
-});
-
-app.post("/homescoreminus", (req, res) => {
-  if (scoreboard.home > 0) {
-    scoreboard.home--;
+  if (req.query.homeScore) {
+    scoreHome = req.query.homeScore;
+    scoreAway = req.query.awayScore;
+  } else {
+    console.log("Nothing to render");
   }
-  console.log("Score team 1 | " + scoreboard.home + " punten.");
-  res.redirect("/");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
 });
 
 app.post("/homescoreplus", (req, res) => {
-  scoreboard.home++;
-  console.log("Score team 1 | " + scoreboard.home + " punten.");
-  res.redirect("/");
+  scoreHome++;
+  console.log("Score team 1 | " + scoreHome + " punten.");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
 });
 
-app.post("/awayscoreminus", (req, res) => {
-  if (scoreboard.away > 0) {
-    scoreboard.away--;
+app.post("/homescoreminus", (req, res) => {
+  if (scoreHome > 0) {
+    scoreHome--;
   }
-  console.log("Score team 2 | " + scoreboard.away + " punten.");
-  res.redirect("/");
+  console.log("Score team 1 | " + scoreHome + " punten.");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
 });
 
 app.post("/awayscoreplus", (req, res) => {
-  scoreboard.away++;
-  console.log("Score team 2 | " + scoreboard.away + " punten.");
-  res.redirect("/");
+  scoreAway++;
+  console.log("Score team 2 | " + scoreAway + " punten.");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
+});
+
+app.post("/awayscoreminus", (req, res) => {
+  if (scoreAway > 0) {
+    scoreAway--;
+  }
+  console.log("Score team 2 | " + scoreAway + " punten.");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
 });
 
 app.listen(port, () => console.log(`Live scoreboard running on port ${port}.`));

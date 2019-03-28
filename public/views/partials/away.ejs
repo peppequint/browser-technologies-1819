@@ -3,7 +3,7 @@
 	<form class="counter counter-away" action="/awayscoreminus" method="POST">
 		<button class="counter-btn counter-minus" type="submit">-</button>
 	</form>
-	<span class="score-container score-away"><p class="score-number"><%= scoreboard.away %></p></span>
+	<span class="score-container score-away"><p id="score-number--away" class="score-number"><%= scoreAway %></p></span>
 	<form class="counter counter-away" action="/awayscoreplus" method="POST">
 		<button class="counter-btn counter-plus" type="submit">+</button>
 	</form>

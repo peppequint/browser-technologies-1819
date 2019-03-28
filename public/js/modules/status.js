@@ -3,30 +3,76 @@ const homeBtnMinus = document.querySelector(".counter-home > .counter-minus");
 const awayBtnPlus = document.querySelector(".counter-away > .counter-plus");
 const awayBtnMinus = document.querySelector(".counter-away > .counter-minus");
 
-let homeScore = document.querySelector(".score-home > .score-number");
-let awayScore = document.querySelector(".score-away > .score-number");
+const homeScore = document.querySelector("#score-number--home");
+const awayScore = document.querySelector("#score-number--away");
+
+let homeScoreNumber = document.querySelector(".score-home > .score-number")
+  .textContent;
+let awayScoreNumber = document.querySelector(".score-away > .score-number")
+  .textContent;
 
 const statusNotification = document.querySelector(".status-notification");
 const statusMessage = document.querySelector(".status-message");
 
 function plusScoreHome() {
-  homeScore.textContent++;
-  console.log("Score team 1 | " + homeScore.textContent + " punten.");
+  homeScoreNumber++;
+  if (window.localStorage) {
+    localStorage.setItem("Score team 1", homeScoreNumber);
+  }
+  homeScore.textContent = homeScoreNumber;
+  console.log("Score team 1 | " + homeScoreNumber + " punten.");
 }
 
 function minusScoreHome() {
-  homeScore.textContent--;
-  console.log("Score team 1 | " + homeScore.textContent + " punten.");
+  if (homeScoreNumber > 0) {
+    homeScoreNumber--;
+  }
+  if (window.localStorage) {
+    localStorage.setItem("Score team 1", homeScoreNumber);
+  }
+  homeScore.textContent = homeScoreNumber;
+  console.log("Score team 1 | " + homeScoreNumber + " punten.");
 }
 
 function plusScoreAway() {
-  awayScore.textContent++;
-  console.log("Score team 2 | " + awayScore.textContent + " punten.");
+  awayScoreNumber++;
+  if (window.localStorage) {
+    localStorage.setItem("Score team 2", awayScoreNumber);
+  }
+  awayScore.textContent = awayScoreNumber;
+  console.log("Score team 2 | " + awayScoreNumber + " punten.");
 }
 
 function minusScoreAway() {
-  awayScore.textContent--;
-  console.log("Score team 2 | " + awayScore.textContent + " punten.");
+  if (awayScoreNumber > 0) {
+    awayScoreNumber--;
+  }
+  if (window.localStorage) {
+    localStorage.setItem("Score team 2", awayScoreNumber);
+  }
+  awayScore.textContent = awayScoreNumber;
+  console.log("Score team 2 | " + awayScoreNumber + " punten.");
+}
+
+function get(path, params) {
+  var method = "get";
+
+  const form = document.createElement("form");
+  form.setAttribute("method", method);
+  form.setAttribute("action", path);
+
+  for (var key in params) {
+    if (params.hasOwnProperty(key)) {
+      var hiddenField = document.createElement("input");
+      hiddenField.setAttribute("type", "hidden");
+      hiddenField.setAttribute("name", key);
+      hiddenField.setAttribute("value", params[key]);
+
+      form.appendChild(hiddenField);
+    }
+  }
+  document.body.appendChild(form);
+  form.submit();
 }
 
 const status = () => {
@@ -79,6 +125,10 @@ const status = () => {
     awayBtnPlus.type = "submit";
     awayBtnMinus.type = "submit";
     console.log("Connection is good");
+    get("/", {
+      homeScore: homeScore.textContent,
+      awayScore: awayScore.textContent
+    });
     statusNotification.classList.add("online");
     statusNotification.classList.remove("offline");
     statusMessage.textContent = "You are currently online";
