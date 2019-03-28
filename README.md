@@ -1,6 +1,6 @@
 <p align="center">
 	<h1 align='center'>Scoreboard App</h1>
-<!-- 	<img src="src/img/screenshot-app.png" width="920" /> -->
+<img align='center' src="./public/src/img/screenshot-application.png" width="420" />
 </p>
 <p align="center">
 	Keep the score during a practice game and collect multiple data of your team.
