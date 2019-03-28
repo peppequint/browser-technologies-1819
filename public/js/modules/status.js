@@ -6,6 +6,8 @@ const awayBtnMinus = document.querySelector(".counter-away > .counter-minus");
 const homeScore = document.querySelector("#score-number--home");
 const awayScore = document.querySelector("#score-number--away");
 
+var online = true;
+
 let homeScoreNumber = document.querySelector(".score-home > .score-number")
   .textContent;
 let awayScoreNumber = document.querySelector(".score-away > .score-number")
@@ -75,8 +77,36 @@ function get(path, params) {
   form.submit();
 }
 
+function reset() {
+  homeScoreNumber = 0;
+  awayScoreNumber = 0;
+
+  homeScore.innerText = homeScoreNumber;
+  awayScore.innerText = awayScoreNumber;
+
+  if (online == true) {
+    get("/", {
+      homeScore: homeScore.textContent,
+      awayScore: awayScore.textContent
+    });
+  } else {
+    console.log(online);
+  }
+}
+
+const resetButton = document.querySelector(".reset-btn");
+resetButton.addEventListener(
+  "click",
+  function() {
+    reset();
+  },
+  false
+);
+
 const status = () => {
   window.addEventListener("offline", event => {
+    online = false;
+
     homeBtnPlus.type = "button";
     homeBtnMinus.type = "button";
     awayBtnPlus.type = "button";
@@ -120,6 +150,7 @@ const status = () => {
   });
 
   window.addEventListener("online", event => {
+    online = true;
     homeBtnPlus.type = "submit";
     homeBtnMinus.type = "submit";
     awayBtnPlus.type = "submit";
