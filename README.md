@@ -3,9 +3,9 @@
 <img align='center' src="./public/src/img/screenshot-application.png" width="420" />
 </div>
 <p align="center">
-	Keep the score during a practice game and collect multiple data of your team.
+	Keep the score during a practice game, e.g. football or field hockey.
 	<br>
-	<a href="#">Live demo</a>
+	<!-- <a href="#">Live demo</a> -->
 </p>
 <br>
 
@@ -31,24 +31,37 @@ cd browser-technologies-1819
 # Install dependencies
 npm install
 
-# Run & build
-## what to do here?
-
+# Server + file changes are detected
+npm run dev
 ```
 
 ## Concept
 
-With this app you can keep track of the score during a training match. It is possible to add teams with specific players. This allows the coach to see how well a player performs within the team or to see what the best team is for upcoming fixtures.
+With this app you can keep track of the score during a training match. Also it is possible to keep track of multiple matches during a training session.
 
 ### Core functionality
 
-Keep track of the score during a training match.
+Keep track of the score during a training match, even when the user can't connect to the internet.
 
 ### Wireflow
 
 ## Features
 
-### Progressive enhancement
+### localStorage
+
+```javascript
+if (window.localStorage) {
+  localStorage.setItem("Score team 1", homeScoreNumber);
+}
+```
+
+### Fallback font
+
+```css
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+```
 
 ## Status
 
