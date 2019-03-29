@@ -45,7 +45,7 @@ Keep track of the score during a training match, even when the user can't connec
 
 ### Wireflow
 
-## Features
+## Progressive enhancement
 
 ### localStorage
 
@@ -63,6 +63,19 @@ body {
 }
 ```
 
+### Fallback css declaration
+
+```css
+.container .container-item {
+  height: 365px;
+  height: 42.5vh;
+}
+```
+
 ## Status
 
 ## Sources
+
+```
+
+```
