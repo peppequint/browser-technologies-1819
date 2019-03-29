@@ -44,9 +44,62 @@ With this app you can keep track of the score during a training match. Also it i
 
 Keep track of the score during a training match, even when the user can't connect to the internet.
 
-### Wireflow
+### Device lab
+
+![Device lab](./public/src/img/device-lab.jpg)]
 
 ## Progressive enhacement
+
+### Javascript disabled
+
+Because the application is rendered server-side, it is possible to use the application when Javascript is off. Every time a goal is scored, the user presses the plus button. This number is sent to the server and will be rendered on the page.
+
+```javascript
+// When team one scores a goal
+app.post("/homescoreplus", (req, res) => {
+  scoreHome++;
+  console.log("Score team 1 | " + scoreHome + " punten.");
+  res.render("pages/index", { scoreHome: scoreHome, scoreAway: scoreAway });
+});
+```
+
+With the `POST` method and `submit` button the code above will be called. This applies to every button that has to do with the score.
+
+```html
+<!---->
+<form class="counter counter-home" action="/homescoreminus" method="POST">
+  <button class="counter-btn counter-minus" type="submit">-</button>
+</form>
+```
+
+### Use offline
+
+When the user goes offline (e.g. bad internet or the user has internet turned off), the application can still be used. The user gets a notification that he is not connected.
+
+```javascript
+window.addEventListener("offline", event => {
+  // Detects when a user is offline
+});
+```
+
+When the user is back online, a get request goes to the server. This will update the score when it is adjusted offline. This allows the user to continue at any time, even if he has no internet.
+
+```javascript
+window.addEventListener("online", event => {
+  // Detects when a user is online
+  get("/", {
+    homeScore: homeScore.textContent,
+    awayScore: awayScore.textContent
+  });
+});
+```
+
+<details><summary><a>Notification</a>
+</summary>
+<br>
+<img src="./public/src/img/offline-noti.png" />
+<br>
+</details>
 
 ## Feature detection
 
@@ -80,4 +133,6 @@ body {
 
 ## Status
 
-## Sources
+- [ ] Timer needs to be improved.
+- [ ] Possibility to add a new game when the first one is over.
+- [ ] More feature detection.
