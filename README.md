@@ -1,6 +1,6 @@
 <div align="center">
 	<h1 align='center'>Scoreboard App</h1>
-<img align='center' src="./public/src/img/screenshot-application.png" width="420" />
+	<img align='center' src="./public/src/img/screenshot-application.png" width="420" />
 </div>
 <p align="center">
 	Keep the score during a practice game, e.g. football or field hockey.
@@ -13,7 +13,8 @@
 
 - [Install](#install)
 - [Concept](#concept)
-- [Features](#features)
+- [Progressive enhancement](#progressive-enhacement)
+- [Feature detection](#feature-detection)
 - [Status](#status)
 - [Sources](#sources)
 
@@ -45,11 +46,14 @@ Keep track of the score during a training match, even when the user can't connec
 
 ### Wireflow
 
-## Progressive enhancement
+## Progressive enhacement
+
+## Feature detection
 
 ### localStorage
 
 ```javascript
+// Detects if the browser supports localStorage
 if (window.localStorage) {
   localStorage.setItem("Score team 1", homeScoreNumber);
 }
@@ -58,6 +62,7 @@ if (window.localStorage) {
 ### Fallback font
 
 ```css
+/* When custom fonts won't be supported, sans-serif will be activated */
 body {
   font-family: "Noto Sans", sans-serif;
 }
@@ -66,6 +71,7 @@ body {
 ### Fallback css declaration
 
 ```css
+/* When the value of viewport-height won't be supported, it will be set to pixels */
 .container .container-item {
   height: 365px;
   height: 42.5vh;
@@ -75,7 +81,3 @@ body {
 ## Status
 
 ## Sources
-
-```
-
-```

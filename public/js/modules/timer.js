@@ -3,10 +3,10 @@ const timer = minutes => {
   let seconds = 60;
   const mins = minutes;
   function tick() {
-    const counter = document.querySelector(".countdown");
+    const timeCounter = document.querySelector(".countdown");
     let currentMinute = mins - 1;
     seconds--;
-    counter.textContent =
+    timeCounter.textContent =
       currentMinute.toString() +
       ":" +
       (seconds < 10 ? "0" : "") +

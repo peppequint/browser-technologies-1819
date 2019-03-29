@@ -157,6 +157,7 @@ ul {
   height: 100px;
   height: 10vh;
   justify-content: space-around;
+  padding: 0 10%;
 }
 
 .container .container-divider .app-value {
