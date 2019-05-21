@@ -131,6 +131,11 @@ ul {
   width: 40px;
 }
 
+.container .container-item .counter .counter-btn:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  outline: 3px solid var(--color-white);
+}
+
 .container .container-item .score-container {
   align-items: center;
   background-color: var(--color-background-counter);
@@ -158,6 +163,19 @@ ul {
   height: 10vh;
   justify-content: space-around;
   padding: 0 10%;
+}
+
+.container .container-divider .app-btn {
+  padding: 1rem 2rem;
+}
+
+.container .container-divider .app-btn:focus {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  outline: 3px solid var(--color-white);
+}
+
+.container .container-divider .start-btn {
+  opacity: 0.25;
 }
 
 .container .container-divider .app-value {

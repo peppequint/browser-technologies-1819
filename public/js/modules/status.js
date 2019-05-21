@@ -104,49 +104,52 @@ resetButton.addEventListener(
 );
 
 const status = () => {
+  homeBtnPlus.type = "button";
+  homeBtnMinus.type = "button";
+  awayBtnPlus.type = "button";
+  awayBtnMinus.type = "button";
+
+  resetButton.type = "button";
+
+  homeBtnPlus.addEventListener(
+    "click",
+    function() {
+      plusScoreHome();
+    },
+    false
+  );
+
+  homeBtnMinus.addEventListener(
+    "click",
+    function() {
+      minusScoreHome();
+    },
+    false
+  );
+
+  awayBtnPlus.addEventListener(
+    "click",
+    function() {
+      plusScoreAway();
+    },
+    false
+  );
+
+  awayBtnMinus.addEventListener(
+    "click",
+    function() {
+      minusScoreAway();
+    },
+    false
+  );
+
   window.addEventListener("offline", event => {
     online = false;
 
-    homeBtnPlus.type = "button";
-    homeBtnMinus.type = "button";
-    awayBtnPlus.type = "button";
-    awayBtnMinus.type = "button";
     console.log("Connection is lost");
     statusNotification.classList.add("offline");
     statusNotification.classList.remove("online");
     statusMessage.textContent = "You have lost connection!";
-
-    homeBtnPlus.addEventListener(
-      "click",
-      function() {
-        plusScoreHome();
-      },
-      false
-    );
-
-    homeBtnMinus.addEventListener(
-      "click",
-      function() {
-        minusScoreHome();
-      },
-      false
-    );
-
-    awayBtnPlus.addEventListener(
-      "click",
-      function() {
-        plusScoreAway();
-      },
-      false
-    );
-
-    awayBtnMinus.addEventListener(
-      "click",
-      function() {
-        minusScoreAway();
-      },
-      false
-    );
   });
 
   window.addEventListener("online", event => {
@@ -155,6 +158,7 @@ const status = () => {
     homeBtnMinus.type = "submit";
     awayBtnPlus.type = "submit";
     awayBtnMinus.type = "submit";
+
     console.log("Connection is good");
     get("/", {
       homeScore: homeScore.textContent,
@@ -163,6 +167,38 @@ const status = () => {
     statusNotification.classList.add("online");
     statusNotification.classList.remove("offline");
     statusMessage.textContent = "You are currently online";
+
+    homeBtnPlus.removeEventListener(
+      "click",
+      function() {
+        plusScoreHome();
+      },
+      false
+    );
+
+    homeBtnMinus.removeEventListener(
+      "click",
+      function() {
+        minusScoreHome();
+      },
+      false
+    );
+
+    awayBtnPlus.removeEventListener(
+      "click",
+      function() {
+        plusScoreAway();
+      },
+      false
+    );
+
+    awayBtnMinus.removeEventListener(
+      "click",
+      function() {
+        minusScoreAway();
+      },
+      false
+    );
   });
 };
 

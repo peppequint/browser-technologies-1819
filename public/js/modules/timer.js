@@ -1,9 +1,21 @@
 let timeoutHandle;
+
+const startBtn = document.querySelector(".start-btn");
+
+const timeCounter = document.querySelector(".countdown");
+timeCounter.textContent = "2:00";
+
 const timer = minutes => {
+  if (startBtn.getAttribute("data-text-swap") == startBtn.innerHTML) {
+    startBtn.innerHTML = startBtn.getAttribute("data-text-original");
+    clearTimeout(timeoutHandle);
+  } else {
+    startBtn.setAttribute("data-text-original", startBtn.innerHTML);
+    startBtn.innerHTML = startBtn.getAttribute("data-text-swap");
+  }
   let seconds = 60;
   const mins = minutes;
   function tick() {
-    const timeCounter = document.querySelector(".countdown");
     let currentMinute = mins - 1;
     seconds--;
     timeCounter.textContent =
@@ -24,10 +36,10 @@ const timer = minutes => {
   tick();
 };
 
-document.querySelector(".start-btn").addEventListener(
+startBtn.addEventListener(
   "click",
   () => {
-    timer(3);
+    timer(2);
   },
   false
 );
