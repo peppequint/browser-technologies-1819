@@ -5,7 +5,7 @@
 <p align="center">
 	Keep the score during a practice game, e.g. football or field hockey.
 	<br>
-	<a href="https://rocky-beach-47665.herokuapp.com/">Live demo</a>
+	<a href="https://browser-technologies-1819-pq.herokuapp.com/">Live demo</a>
 </p>
 <br>
 
